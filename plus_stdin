@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 import sys
 
+
+def tonum(s):   #def 関数の名前(引数)で関数を定義
+    try:
+        return int(s)
+    except ValueError:
+        return float(s)
+
+
 x = 0
 for line in sys.stdin:
-    try:
-        x += int(line)
-    except:
-        x += float(line)
+    x += tonum(line)
 
 print(x)
